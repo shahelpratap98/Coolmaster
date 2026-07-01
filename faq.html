@@ -131,7 +131,7 @@ body{
   line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;color:var(--deep);letter-spacing:-.015em}
 
@@ -221,7 +221,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
   filter:blur(2px);animation:spin 36s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.thermal-disc{animation:none}}
-.hero-visual img{position:relative;width:300px;height:auto;max-width:72%;filter:drop-shadow(0 24px 40px rgba(21,34,79,.20))}
+.hero-visual img{position:relative;width:72%;max-width:300px;height:auto;aspect-ratio:600/761;object-fit:contain;filter:drop-shadow(0 24px 40px rgba(21,34,79,.20))}
 .hero-badge{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;
   padding:10px 14px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:10px;font-weight:600;font-size:.86rem;color:var(--deep)}
 .hero-badge .dot{width:9px;height:9px;border-radius:50%}
