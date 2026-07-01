@@ -1,0 +1,5 @@
+# robots.txt for CoolMaster Services Limited
+User-agent: *
+Allow: /
+
+Sitemap: https://www.coolmaster.co.nz/sitemap.xml
