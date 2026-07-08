@@ -42,7 +42,7 @@
   "address": { "@type": "PostalAddress", "addressLocality": "Auckland", "addressRegion": "Auckland", "addressCountry": "NZ" },
   "contactPoint": {
     "@type": "ContactPoint",
-    "name": "Shiv Shivan",
+    "name": "Shiv Sivan",
     "contactType": "customer service",
     "telephone": "+64-21-024-54541",
     "email": "shivcoolmaster@gmail.com",
@@ -429,6 +429,21 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
 .cta-card .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35)}
 .cta-card .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 @media(max-width:740px){.cta-wrap{padding:60px 0}.cta-card{padding:38px;flex-direction:column;align-items:flex-start}}
+/* ---- about page ---- */
+.about-story{max-width:70ch}
+.about-story p{font-size:1.08rem;color:var(--ink-soft);margin-bottom:18px;line-height:1.75}
+.about-story p strong{color:var(--ink)}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.value-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow-sm)}
+.value-card h3{font-size:1.14rem;margin-bottom:9px}
+.value-card p{color:var(--ink-soft);font-size:.97rem}
+.serve-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.serve-card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--frost);border-radius:16px;padding:26px;box-shadow:var(--shadow-sm)}
+.serve-card:nth-child(even){border-left-color:var(--ember)}
+.serve-card h3{font-size:1.14rem;margin-bottom:8px}
+.serve-card p{color:var(--ink-soft);font-size:.98rem}
+@media(max-width:980px){.values-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.values-grid{grid-template-columns:1fr}.serve-grid{grid-template-columns:1fr}}
 /* ---- floating WhatsApp button ---- */
 .wa-fab{position:fixed;right:22px;bottom:22px;z-index:90;display:inline-flex;align-items:center;gap:10px;
   background:#25D366;color:#fff;padding:13px 20px 13px 14px;border-radius:999px;font-family:var(--font-body);
@@ -448,6 +463,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="#top" class="active" aria-current="page">Home</a>
+      <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
@@ -463,6 +479,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
 </header>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#top" class="active" aria-current="page">Home</a>
+  <a href="about.html">About</a>
   <a href="services.html">Services</a>
   <a href="faq.html">FAQ</a>
   <a href="contact.html">Contact</a>
@@ -694,6 +711,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
         <h5>Company</h5>
         <ul>
           <li><a href="#top">Home</a></li>
+          <li><a href="about.html">About us</a></li>
           <li><a href="services.html#audiences">Residential &amp; commercial</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -702,7 +720,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
       <div>
         <h5>Contact</h5>
         <ul>
-          <li>Shiv Shivan</li>
+          <li>Shiv Sivan</li>
           <li><a href="tel:+642102454541">021 024 54541</a></li>
           <li><a href="mailto:shivcoolmaster@gmail.com">shivcoolmaster@gmail.com</a></li>
           <li>Auckland, New Zealand</li>
