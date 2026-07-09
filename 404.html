@@ -145,9 +145,10 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
   transition:box-shadow .25s ease;
 }
 .site-header.scrolled{box-shadow:var(--shadow-sm)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:92px;gap:20px}
 .brand{flex:0 0 auto;display:flex;align-items:center}
-.brand img{height:42px;width:auto;max-width:none;object-fit:contain}
+.brand img{height:58px;width:auto;max-width:none;object-fit:contain}
+@media (max-width:420px){.brand img{height:50px}}
 .nav{display:flex;align-items:center;gap:28px}
 .nav a{font-weight:500;font-size:.95rem;color:var(--ink);position:relative;padding:6px 0}
 .nav a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--warm-cool);transition:width .22s ease}
@@ -444,6 +445,34 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
 .serve-card p{color:var(--ink-soft);font-size:.98rem}
 @media(max-width:980px){.values-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.values-grid{grid-template-columns:1fr}.serve-grid{grid-template-columns:1fr}}
+/* ---- services dropdown ---- */
+.nav-drop{position:relative;display:inline-flex}
+.nav-drop .drop-toggle{display:inline-flex;align-items:center;gap:5px}
+.nav-drop .chev{width:14px;height:14px;transition:transform .18s ease}
+.nav-drop:hover .chev,.nav-drop:focus-within .chev{transform:rotate(180deg)}
+.nav-drop.active>.drop-toggle{color:var(--frost)}
+.drop-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);min-width:300px;
+  background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 44px rgba(21,34,79,.16);
+  padding:10px;display:flex;flex-direction:column;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .16s ease,transform .16s ease;z-index:80}
+.nav-drop:hover .drop-menu,.nav-drop:focus-within .drop-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.drop-menu a{display:block;padding:10px 14px;border-radius:9px;font-size:.95rem;font-weight:500;color:var(--ink);white-space:nowrap}
+.drop-menu a:hover{background:var(--mist);color:var(--frost)}
+.drop-menu .drop-all{font-weight:700;color:var(--frost);border-bottom:1px solid var(--line);border-radius:9px 9px 0 0;margin-bottom:6px}
+.nav-drop::after{content:"";position:absolute;top:100%;left:0;right:0;height:10px}
+.mobile-menu a.sub{padding-left:34px;font-size:.98rem;color:var(--ink-soft)}
+/* ---- service detail pages ---- */
+.svc-detail{max-width:72ch}
+.svc-detail p{font-size:1.07rem;color:var(--ink-soft);line-height:1.75;margin-bottom:18px}
+.svc-detail p strong{color:var(--ink)}
+.svc-includes{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px;box-shadow:var(--shadow-sm)}
+.svc-includes h3{font-size:1.2rem;margin-bottom:18px}
+.svc-two{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:start}
+@media(max-width:860px){.svc-two{grid-template-columns:1fr}}
+.svc-card h3 a{color:inherit;text-decoration:none}
+.svc-card h3 a::after{content:" →";color:var(--frost);opacity:0;transition:opacity .15s ease}
+.svc-card:hover h3 a::after{opacity:1}
+.svc-card h3 a:hover{color:var(--frost)}
 /* ---- floating WhatsApp button ---- */
 .wa-fab{position:fixed;right:22px;bottom:22px;z-index:90;display:inline-flex;align-items:center;gap:10px;
   background:#25D366;color:#fff;padding:13px 20px 13px 14px;border-radius:999px;font-family:var(--font-body);
@@ -464,7 +493,21 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
     <nav class="nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
+      <div class="nav-drop">
+        <a href="services.html" class="drop-toggle">Services <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="drop-menu" role="menu" aria-label="Services">
+        <a href="services.html" class="drop-all">All services</a>
+        <a href="commercial-hvac.html">Commercial HVAC Design &amp; Install</a>
+        <a href="commercial-refrigeration.html">Commercial Refrigeration</a>
+        <a href="bwof-form-12a.html">BWoF &amp; Form 12A Support</a>
+        <a href="servicing-maintenance.html">Servicing &amp; Maintenance</a>
+        <a href="mechanical-ventilation.html">Mechanical Ventilation</a>
+        <a href="emergency-repairs.html">Emergency Refrigeration Repairs</a>
+        <a href="heat-pumps.html">Heat Pump Supply &amp; Installation</a>
+        <a href="air-conditioning.html">Home Air Conditioning</a>
+        <a href="ducted-systems.html">Ducted Heating &amp; Cooling</a>
+        </div>
+      </div>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -481,6 +524,15 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
+  <a href="commercial-hvac.html" class="sub">Commercial HVAC Design &amp; Install</a>
+  <a href="commercial-refrigeration.html" class="sub">Commercial Refrigeration</a>
+  <a href="bwof-form-12a.html" class="sub">BWoF &amp; Form 12A Support</a>
+  <a href="servicing-maintenance.html" class="sub">Servicing &amp; Maintenance</a>
+  <a href="mechanical-ventilation.html" class="sub">Mechanical Ventilation</a>
+  <a href="emergency-repairs.html" class="sub">Emergency Refrigeration Repairs</a>
+  <a href="heat-pumps.html" class="sub">Heat Pump Supply &amp; Installation</a>
+  <a href="air-conditioning.html" class="sub">Home Air Conditioning</a>
+  <a href="ducted-systems.html" class="sub">Ducted Heating &amp; Cooling</a>
   <a href="faq.html">FAQ</a>
   <a href="contact.html">Contact</a>
   <a href="tel:+642102454541">Call 021 024 54541</a>
@@ -519,11 +571,12 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
       <div>
         <h5>Services</h5>
         <ul>
-          <li><a href="services.html">Heat pumps</a></li>
-          <li><a href="services.html">Air conditioning</a></li>
-          <li><a href="services.html">Refrigeration</a></li>
-          <li><a href="services.html">Ducted systems</a></li>
-          <li><a href="services.html">Servicing</a></li>
+          <li><a href="commercial-hvac.html">Commercial HVAC</a></li>
+          <li><a href="commercial-refrigeration.html">Commercial refrigeration</a></li>
+          <li><a href="bwof-form-12a.html">BWoF &amp; Form 12A support</a></li>
+          <li><a href="heat-pumps.html">Heat pumps</a></li>
+          <li><a href="servicing-maintenance.html">Servicing &amp; maintenance</a></li>
+          <li><a href="services.html">All services</a></li>
         </ul>
       </div>
       <div>
