@@ -189,38 +189,29 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
 @keyframes fade{from{opacity:0}to{opacity:1}}
 
 /* ============================ HERO ============================ */
-.hero{position:relative;overflow:hidden;background:var(--mist)}
-/* the duality: warm wash on the left, cool wash on the right */
+.hero{position:relative;overflow:hidden;background:var(--deep) url('hero-banner.jpg') center right/cover no-repeat}
+/* navy overlay from the left keeps text legible over the photo */
 .hero::before{content:"";position:absolute;inset:0;z-index:0;
-  background:
-    radial-gradient(60% 80% at 88% 18%,rgba(22,155,215,.16),transparent 60%),
-    radial-gradient(55% 75% at 6% 70%,rgba(244,122,32,.16),transparent 60%);
+  background:linear-gradient(92deg,rgba(13,21,48,.88) 0%,rgba(13,21,48,.72) 34%,rgba(13,21,48,.38) 62%,rgba(13,21,48,.10) 100%);
 }
-.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
-  padding:74px 0 84px}
-.hero h1{font-size:clamp(2.5rem,5.2vw,4.1rem);font-weight:800;margin:18px 0 0}
-.hero h1 .warm{color:var(--flame)}
-.hero h1 .cool{color:var(--frost)}
-.hero-sub{font-size:1.16rem;color:var(--ink-soft);max-width:33ch;margin:22px 0 30px}
+.hero-inner{position:relative;z-index:1;max-width:640px;padding:96px 0 104px}
+.hero .eyebrow{color:#9FD3F2}
+.hero .eyebrow::before{background:var(--warm-cool)}
+.hero h1{font-size:clamp(2.5rem,5vw,3.9rem);font-weight:800;margin:18px 0 0;color:#fff}
+.hero h1 .warm{color:#FFA36B}
+.hero h1 .cool{color:#7FD0F5}
+.hero-sub{font-size:1.16rem;color:rgba(255,255,255,.88);max-width:44ch;margin:22px 0 30px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
-.hero-trust{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.9rem;color:var(--ink-soft)}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.45)}
+.hero .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.9rem;color:rgba(255,255,255,.85)}
 .hero-trust span{display:inline-flex;align-items:center;gap:8px;font-weight:500}
-.hero-trust svg{width:17px;height:17px;color:var(--frost);flex:none}
-
-/* hero visual: icon on a thermal disc */
-.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:450px}
-.thermal-disc{position:absolute;width:430px;height:430px;max-width:92vw;border-radius:50%;
-  background:conic-gradient(from 210deg,rgba(244,122,32,.20),rgba(229,52,43,.16),rgba(22,155,215,.18),rgba(244,122,32,.20));
-  filter:blur(2px);animation:spin 36s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.thermal-disc{animation:none}}
-.hero-visual img{position:relative;width:72%;max-width:300px;height:auto;aspect-ratio:600/761;object-fit:contain;filter:drop-shadow(0 24px 40px rgba(21,34,79,.20))}
-.hero-badge{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;
-  padding:10px 14px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:10px;font-weight:600;font-size:.86rem;color:var(--deep)}
-.hero-badge .dot{width:9px;height:9px;border-radius:50%}
-.hero-badge.heat{top:18%;left:-6px}.hero-badge.heat .dot{background:var(--ember)}
-.hero-badge.cool{bottom:16%;right:0}.hero-badge.cool .dot{background:var(--frost)}
-.hero-badge .lbl{font-family:var(--font-mono);font-size:.72rem;color:var(--ink-soft);font-weight:500}
+.hero-trust svg{width:17px;height:17px;color:#7FD0F5;flex:none}
+@media (max-width:860px){
+  .hero{background-position:72% center}
+  .hero::before{background:linear-gradient(180deg,rgba(13,21,48,.86) 0%,rgba(13,21,48,.66) 100%)}
+  .hero-inner{padding:70px 0 78px}
+}
 
 /* ============================ TRUST STRIP ============================ */
 .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
@@ -489,6 +480,10 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
 .svc-card h3 a::after{content:" →";color:var(--frost);opacity:0;transition:opacity .15s ease}
 .svc-card:hover h3 a::after{opacity:1}
 .svc-card h3 a:hover{color:var(--frost)}
+/* ---- page photo banners (Unsplash CDN) ---- */
+.svc-photo{margin:0 0 44px;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-md);background:var(--mist)}
+.svc-photo img{width:100%;height:340px;object-fit:cover;display:block}
+@media(max-width:640px){.svc-photo img{height:210px}.svc-photo{margin-bottom:30px;border-radius:16px}}
 /* ---- floating WhatsApp button ---- */
 .wa-fab{position:fixed;right:22px;bottom:22px;z-index:90;display:inline-flex;align-items:center;gap:10px;
   background:#25D366;color:#fff;padding:13px 20px 13px 14px;border-radius:999px;font-family:var(--font-body);
@@ -565,6 +560,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
 </section>
 <section class="section">
   <div class="wrap">
+    <figure class="svc-photo reveal"><img src="https://images.unsplash.com/photo-1700124113583-81aa99ea2aa2?q=80&w=1200&auto=format&fit=crop" alt="Outdoor heat pump unit installed beside a home" loading="lazy" width="1200" height="340" onerror="this.closest('figure').style.display='none'"></figure>
     <div class="svc-two">
       <div class="svc-detail reveal">
       <p>A heat pump is only as good as its sizing and installation. Undersized, it runs flat-out and struggles; oversized, it cycles and wastes power; installed badly, it's noisy and short-lived.</p>

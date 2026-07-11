@@ -11,6 +11,7 @@ A fast, static, mobile-friendly marketing site for **CoolMaster Services Limited
 | `faq.html` | Frequently asked questions |
 | `contact.html` | Contact details + enquiry form |
 | `404.html` | "Page not found" page (served automatically) |
+| `hero-banner.jpg` | Home page hero photo (heat pump at sunset) |
 | `coolmaster-wordmark.png` | Logo (also embedded in pages; used by search/social) |
 | `coolmaster-icon.png` | Sun/snowflake emblem |
 | `coolmaster-share.jpg` | Social-share preview image (Open Graph) |
@@ -38,6 +39,7 @@ Any static host works too (Netlify, Cloudflare Pages, cPanel) — just upload th
 
 ## Good to know
 
+- **Page photos:** the service and About pages load photos directly from Unsplash's CDN (`images.unsplash.com`) under the Unsplash License — free for commercial use, no attribution required. They require no hosting on your side. For maximum robustness (or to replace them with real job photos, which is recommended), download replacements and swap the `src` URLs.
 - **Contact form:** the enquiry form opens the visitor's email app pre-filled to `shivcoolmaster@gmail.com` (no server/backend needed). For a form that sends without opening an email app, a service like Formspree can be wired in later.
 - **Form 12A wording:** the site describes BWoF servicing and **Form 12A support** (maintenance, checks, records, reporting) — not certificate issuance. Keep this framing unless CoolMaster is a registered IQP for the relevant specified systems.
 - **Business details in use:** CoolMaster Services Limited · Shiv Shivan · 021 024 54541 · shivcoolmaster@gmail.com · Auckland-based · established 2014.
