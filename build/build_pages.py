@@ -590,7 +590,7 @@ SERVICE_PHOTOS = {
     'commercial-refrigeration.html': ('banner-commercial-refrigeration.jpg',
                                       'Glass-door commercial display fridges stocked with chilled food and drinks'),
     'bwof-form-12a.html':            ('banner-bwof-form-12a.jpg',
-                                      'Commercial building air ventilation grille'),
+                                      'Technician inspecting building plant equipment with service records in hand'),
     'servicing-maintenance.html':    ('banner-servicing-maintenance.jpg',
                                       'HVAC service tools laid out for a maintenance visit'),
     'mechanical-ventilation.html':   ('banner-mechanical-ventilation.jpg',
