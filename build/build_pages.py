@@ -588,7 +588,7 @@ SERVICE_PHOTOS = {
     'commercial-hvac.html':          ('banner-commercial-hvac.jpg',
                                       'Technician working amongst commercial rooftop HVAC plant'),
     'commercial-refrigeration.html': ('banner-commercial-refrigeration.jpg',
-                                      'Industrial refrigeration plant pipework'),
+                                      'Glass-door commercial display fridges stocked with chilled food and drinks'),
     'bwof-form-12a.html':            ('banner-bwof-form-12a.jpg',
                                       'Commercial building air ventilation grille'),
     'servicing-maintenance.html':    ('banner-servicing-maintenance.jpg',
