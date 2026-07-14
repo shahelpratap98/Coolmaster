@@ -598,7 +598,7 @@ SERVICE_PHOTOS = {
     'emergency-repairs.html':        ('banner-emergency-repairs.jpg',
                                       'Large commercial HVAC fan unit'),
     'heat-pumps.html':               ('banner-heat-pumps.jpg',
-                                      'Outdoor heat pump unit installed beside a home'),
+                                      'Energy-efficient heat pump outdoor unit installed in a landscaped garden'),
     'air-conditioning.html':         ('banner-air-conditioning.jpg',
                                       'Wall-mounted air conditioning unit in a living room'),
     'ducted-systems.html':           ('banner-ducted-systems.jpg',
