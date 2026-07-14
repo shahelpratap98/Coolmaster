@@ -346,6 +346,19 @@ FOOTER = """</main>
         </ul>
       </div>
     </div>
+      <div class="footer-brands">
+        <h5>Heat pump &amp; air conditioning brands we install</h5>
+        <ul class="brand-list">
+          <li>Mitsubishi Electric</li>
+          <li>Daikin</li>
+          <li>Fujitsu</li>
+          <li>Panasonic</li>
+          <li>Toshiba</li>
+          <li>Mitsubishi Heavy Industries</li>
+          <li>LG</li>
+          <li>Samsung</li>
+        </ul>
+      </div>
     <div class="footer-bottom">
       <div>© <span id="year"></span> CoolMaster Services Limited · GST registered</div>
       <div class="socials">

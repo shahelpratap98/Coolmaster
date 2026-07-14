@@ -354,6 +354,11 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
 .footer ul a{font-size:.95rem;color:#AEB7D6;transition:.15s}
 .footer ul a:hover{color:#fff}
 .footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-top:24px;font-size:.85rem;color:#7E88AD}
+.footer-brands{padding:26px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brands h5{color:#fff;font-family:var(--font-display);font-size:1.05rem;margin-bottom:14px}
+.footer-brands .brand-list{list-style:none;display:flex;flex-direction:row;flex-wrap:wrap;gap:12px 28px;padding:0;margin:0}
+.footer-brands .brand-list li{font-family:var(--font-display);font-weight:700;font-size:1.08rem;color:#C3CCE6;letter-spacing:.01em;opacity:.85}
+@media(max-width:600px){.footer-brands .brand-list{gap:10px 20px}.footer-brands .brand-list li{font-size:.98rem}}
 .socials{display:flex;gap:12px}
 .socials a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.07);display:grid;place-items:center;transition:.2s}
 .socials a:hover{background:var(--frost)}
@@ -598,6 +603,19 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
         </ul>
       </div>
     </div>
+      <div class="footer-brands">
+        <h5>Heat pump &amp; air conditioning brands we install</h5>
+        <ul class="brand-list">
+          <li>Mitsubishi Electric</li>
+          <li>Daikin</li>
+          <li>Fujitsu</li>
+          <li>Panasonic</li>
+          <li>Toshiba</li>
+          <li>Mitsubishi Heavy Industries</li>
+          <li>LG</li>
+          <li>Samsung</li>
+        </ul>
+      </div>
     <div class="footer-bottom">
       <div>© <span id="year"></span> CoolMaster Services Limited · GST registered</div>
       <div class="socials">
