@@ -453,8 +453,8 @@ pages = {}
 
 # HOME
 pages['index.html'] = (
-    head("Air Conditioning &amp; Commercial Refrigeration Auckland | BWoF Form 12A | CoolMaster",
-         "Air conditioning, commercial refrigeration and heat pump installation across Auckland — with BWoF servicing and Form 12A support. Established 2014, GST registered, fully insured. Fast support for coolrooms, heat pumps and extract fans. Free quotes.",
+    head("Commercial HVAC, Refrigeration &amp; Heat Pump Specialists Auckland | CoolMaster",
+         "Commercial HVAC, refrigeration and heat pump specialists in Auckland — expert installation, repairs, maintenance, BWoF servicing and Form 12A support. Next-day installation available, zero surprise pricing, Auckland since 2014. Request a free quote.",
          "")
     + header('home') + HERO + TRUST + SERVICES + DUALITY + WHY + PROCESS + CTA + FOOTER
 )
