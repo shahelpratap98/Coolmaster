@@ -600,7 +600,7 @@ SERVICE_PHOTOS = {
     'heat-pumps.html':               ('banner-heat-pumps.jpg',
                                       'Energy-efficient heat pump outdoor unit installed in a landscaped garden'),
     'air-conditioning.html':         ('banner-air-conditioning.jpg',
-                                      'Wall-mounted air conditioning unit in a living room'),
+                                      'Wall-mounted air conditioning unit in a sunlit modern living room'),
     'ducted-systems.html':           ('banner-ducted-systems.jpg',
                                       'Ceiling vent diffuser of a ducted heating and cooling system'),
 }
