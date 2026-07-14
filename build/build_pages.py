@@ -285,7 +285,7 @@ def header(active):
     </nav>
     <div class="header-cta">
       <a href="tel:+64800000000" class="header-phone">{PHONE_SVG} 0800 000 000</a>
-      <a href="__WA__" class="btn btn-primary" target="_blank" rel="noopener">Get a free quote</a>
+      <a href="__WA__" class="btn btn-primary" target="_blank" rel="noopener">Request a Free Quote</a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
@@ -300,7 +300,7 @@ def header(active):
   <a href="faq.html"{cls('faq')}>FAQ</a>
   <a href="contact.html"{cls('contact')}>Contact</a>
   <a href="tel:+64800000000">Call 0800 000 000</a>
-  <a href="__WA__" class="btn btn-primary" target="_blank" rel="noopener">Get a free quote</a>
+  <a href="__WA__" class="btn btn-primary" target="_blank" rel="noopener">Request a Free Quote</a>
 </div>
 <main>
 """
@@ -415,7 +415,7 @@ CTA = """<section class="cta-wrap"><div class="wrap"><div class="cta-card reveal
     <p>Get honest advice and a free, no-obligation quote for your home or business.</p>
   </div>
   <div class="cta-actions">
-    <a href="__WA__" class="btn btn-primary" target="_blank" rel="noopener">Get a free quote</a>
+    <a href="__WA__" class="btn btn-primary" target="_blank" rel="noopener">Request a Free Quote</a>
     <a href="tel:+64800000000" class="btn btn-ghost">Call 0800 000 000</a>
   </div>
 </div></div></section>
