@@ -586,7 +586,7 @@ pages['about.html'] = (
 # required). Self-hosting avoids hotlink breakage and third-party requests.
 SERVICE_PHOTOS = {
     'commercial-hvac.html':          ('banner-commercial-hvac.jpg',
-                                      'Technician working amongst commercial rooftop HVAC plant'),
+                                      'Ceiling cassette air conditioning unit and ductwork in a commercial office fit-out'),
     'commercial-refrigeration.html': ('banner-commercial-refrigeration.jpg',
                                       'Glass-door commercial display fridges stocked with chilled food and drinks'),
     'bwof-form-12a.html':            ('banner-bwof-form-12a.jpg',
