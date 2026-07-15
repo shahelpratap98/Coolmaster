@@ -347,7 +347,7 @@ FOOTER = """</main>
       </div>
     </div>
       <div class="footer-brands">
-        <h5>Heat pump &amp; air conditioning brands we install</h5>
+        <h5>Heat pump &amp; air conditioning brands we install &amp; maintain</h5>
         <ul class="brand-list">
           <li><img src="brand-daikin.png" alt="Daikin" loading="lazy"></li>
           <li><img src="brand-mitsubishi-electric.png" alt="Mitsubishi Electric" loading="lazy"></li>
