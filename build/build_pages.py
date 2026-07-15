@@ -349,14 +349,10 @@ FOOTER = """</main>
       <div class="footer-brands">
         <h5>Heat pump &amp; air conditioning brands we install</h5>
         <ul class="brand-list">
-          <li>Mitsubishi Electric</li>
-          <li>Daikin</li>
-          <li>Fujitsu</li>
-          <li>Panasonic</li>
-          <li>Toshiba</li>
-          <li>Mitsubishi Heavy Industries</li>
-          <li>LG</li>
-          <li>Samsung</li>
+          <li><img src="brand-mitsubishi-electric.png" alt="Mitsubishi Electric" loading="lazy"></li>
+          <li><img src="brand-fujitsu.png" alt="Fujitsu" loading="lazy"></li>
+          <li><img src="brand-lg.png" alt="LG" loading="lazy"></li>
+          <li><img src="brand-samsung.png" alt="Samsung" loading="lazy"></li>
         </ul>
       </div>
     <div class="footer-bottom">
