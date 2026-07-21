@@ -508,7 +508,6 @@ pages['contact.html'] = (
 # About page — company story, values, who we serve
 ABOUT_STORY = """<section class="section">
   <div class="wrap">
-    <figure class="svc-photo reveal"><img src="banner-about.jpg" alt="Heat pump unit installed outside an Auckland building" loading="lazy" width="1200" height="340" onerror="this.closest('figure').style.display='none'"></figure>
     <div class="section-head reveal">
       <span class="eyebrow">Our story</span>
       <h2>Keeping Auckland at the perfect temperature since 2014</h2>
