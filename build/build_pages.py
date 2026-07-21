@@ -585,7 +585,6 @@ pages['about.html'] = (
                 "The team behind the temperature",
                 "Auckland-based HVAC &amp; refrigeration specialists — founded by Shiv Sivan, trusted by homes and businesses for over a decade.")
     + ABOUT_STORY
-    + WHY
     + CTA + FOOTER
 )
 
