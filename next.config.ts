@@ -28,6 +28,13 @@ const nextConfig: NextConfig = {
   // Pin the workspace root to this app (a sibling app upstream also has a
   // lockfile, which Turbopack would otherwise infer as the root).
   turbopack: { root: __dirname },
+  // Promo image uploads (max 2MB) go through a Server Action; raise the
+  // default 1MB action body limit to leave headroom.
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "3mb",
+    },
+  },
   async headers() {
     return [
       {

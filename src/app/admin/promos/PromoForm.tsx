@@ -4,6 +4,7 @@ import { useActionState, useState } from "react";
 import {
   createPromoAction,
   updatePromoAction,
+  uploadPromoImageAction,
   type FormState,
 } from "../actions";
 import { PromoCard } from "@/components/PromoCard";
@@ -44,6 +45,31 @@ export function PromoForm({ promo }: { promo: Promo | null }) {
         [k]: e.target.type === "checkbox" ? (e.target as HTMLInputElement).checked : e.target.value,
       }));
 
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState("");
+
+  async function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploadError("");
+    if (file.size > 2 * 1024 * 1024) {
+      setUploadError("Image must be 2MB or smaller.");
+      e.target.value = "";
+      return;
+    }
+    setUploading(true);
+    const fd = new FormData();
+    fd.append("image", file);
+    const res = await uploadPromoImageAction(fd);
+    setUploading(false);
+    e.target.value = "";
+    if (!res.ok) {
+      setUploadError(res.error);
+      return;
+    }
+    setF((s) => ({ ...s, imagePath: res.path }));
+  }
+
   return (
     <div className="admin-grid">
       <form action={formAction} className="admin-form admin-card">
@@ -72,8 +98,20 @@ export function PromoForm({ promo }: { promo: Promo | null }) {
 
         <label className="admin-field">
           Image URL or path (optional)
-          <input name="imagePath" value={f.imagePath} onChange={upd("imagePath")} maxLength={300} placeholder="https://… or promo-images object path" />
+          <input name="imagePath" value={f.imagePath} onChange={upd("imagePath")} maxLength={300} placeholder="https://… or upload below" />
         </label>
+
+        <div className="admin-field">
+          Or upload an image (JPEG / PNG / WebP / GIF, max 2MB)
+          <input
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/gif"
+            onChange={handleFile}
+            disabled={uploading}
+          />
+          {uploading ? <span className="muted">Uploading…</span> : null}
+          {uploadError ? <span className="admin-error">{uploadError}</span> : null}
+        </div>
 
         <div className="row">
           <label className="admin-field">

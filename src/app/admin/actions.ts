@@ -1,11 +1,12 @@
 "use server";
 
+import { randomUUID } from "crypto";
 import { z } from "zod";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
-import { AuthError } from "@/lib/auth";
+import { AuthError, requireAdmin } from "@/lib/auth";
 import {
   createPromo,
   updatePromo,
@@ -13,6 +14,7 @@ import {
   setPromoActive,
 } from "@/lib/promos";
 import { rateLimit } from "@/lib/ratelimit";
+import { detectImage, MAX_IMAGE_BYTES } from "@/lib/image-detect";
 
 export type FormState = { error?: string; ok?: boolean } | undefined;
 
@@ -75,6 +77,48 @@ export async function logoutAction() {
   const supabase = await createClient();
   await supabase.auth.signOut();
   redirect("/admin/login");
+}
+
+// ---------------- image upload ----------------
+
+export type UploadResult =
+  | { ok: true; path: string }
+  | { ok: false; error: string };
+
+export async function uploadPromoImageAction(
+  formData: FormData
+): Promise<UploadResult> {
+  const auth = await requireAdmin().catch(() => null);
+  if (!auth) {
+    return { ok: false, error: "Your session has expired. Please sign in again." };
+  }
+
+  const file = formData.get("image");
+  if (!(file instanceof File) || file.size === 0) {
+    return { ok: false, error: "No file selected." };
+  }
+  if (file.size > MAX_IMAGE_BYTES) {
+    return { ok: false, error: "Image must be 2MB or smaller." };
+  }
+
+  // Validate the real file type by magic numbers, not the extension/MIME header.
+  const bytes = new Uint8Array(await file.arrayBuffer());
+  const kind = detectImage(bytes);
+  if (!kind) {
+    return { ok: false, error: "Only JPEG, PNG, WebP or GIF images are allowed." };
+  }
+
+  const name = `${randomUUID()}.${kind.ext}`; // non-guessable filename
+  const { error } = await auth.supabase.storage
+    .from("promo-images")
+    .upload(name, file, { contentType: kind.mime, upsert: false });
+
+  if (error) {
+    const cid = randomUUID();
+    console.error(`[uploadPromoImage] cid=${cid}`, error);
+    return { ok: false, error: `Upload failed. (ref ${cid})` };
+  }
+  return { ok: true, path: name };
 }
 
 // ---------------- promo CRUD ----------------
