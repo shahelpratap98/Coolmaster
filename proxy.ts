@@ -1,7 +1,9 @@
 import { type NextRequest } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
 
-export async function middleware(request: NextRequest) {
+// Next 16 "proxy" (formerly middleware). Defaults to the Node.js runtime,
+// which the Supabase SSR client needs (the Edge runtime lacks some modules).
+export async function proxy(request: NextRequest) {
   return await updateSession(request);
 }
 
