@@ -3,20 +3,9 @@ import { randomUUID } from "crypto";
 import { createClient } from "@/lib/supabase/server";
 import { requireAdmin } from "@/lib/auth";
 import { PromoInputSchema, UuidSchema, type PromoInput } from "@/lib/validation";
+import type { Promo } from "@/lib/promo-types";
 
-export type Promo = {
-  id: string;
-  title: string;
-  badge: string | null;
-  description: string;
-  priceOrDiscount: string | null;
-  imagePath: string | null;
-  startsAt: string | null;
-  endsAt: string | null;
-  isActive: boolean;
-  createdAt: string;
-  updatedAt: string;
-};
+export type { Promo };
 
 type Row = {
   id: string;
@@ -140,7 +129,7 @@ export async function getPromo(id: string): Promise<Promo | null> {
   return data ? mapRow(data as Row) : null;
 }
 
-export async function createPromo(input: PromoInput): Promise<Promo> {
+export async function createPromo(input: unknown): Promise<Promo> {
   const { supabase } = await requireAdmin();
   const parsed = PromoInputSchema.parse(input);
   const { data, error } = await supabase
@@ -152,7 +141,7 @@ export async function createPromo(input: PromoInput): Promise<Promo> {
   return mapRow(data as Row);
 }
 
-export async function updatePromo(id: string, input: PromoInput): Promise<Promo> {
+export async function updatePromo(id: string, input: unknown): Promise<Promo> {
   const { supabase } = await requireAdmin();
   const uid = UuidSchema.parse(id);
   const parsed = PromoInputSchema.parse(input);

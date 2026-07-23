@@ -1,10 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { RevealAnimations } from "@/components/RevealAnimations";
+import "./promos.css";
+import { SiteChrome } from "@/components/SiteChrome";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -60,11 +58,7 @@ export default function RootLayout({
       className={`${bricolage.variable} ${inter.variable} ${jetbrains.variable}`}
     >
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
-        <RevealAnimations />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

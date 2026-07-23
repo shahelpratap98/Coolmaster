@@ -1,0 +1,212 @@
+/* Admin area — reuses the site design tokens from globals.css */
+.admin-root {
+  min-height: 100vh;
+  background: var(--mist);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+.admin-center {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.admin-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  padding: 32px;
+}
+.admin-login {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.admin-login h1 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+.admin-login .muted {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-top: -8px;
+}
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.admin-field input,
+.admin-field textarea,
+.admin-field select {
+  font: inherit;
+  color: var(--ink);
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  font-weight: 400;
+}
+.admin-field textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+.admin-field input:focus,
+.admin-field textarea:focus,
+.admin-field select:focus {
+  outline: 2px solid var(--frost);
+  outline-offset: 1px;
+  border-color: var(--frost);
+}
+.admin-btn {
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 11px 18px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: var(--flame);
+  color: #fff;
+  transition: filter 0.15s ease;
+}
+.admin-btn:hover {
+  filter: brightness(1.05);
+}
+.admin-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.admin-btn.ghost {
+  background: #fff;
+  color: var(--ink);
+  border-color: var(--line);
+}
+.admin-btn.subtle {
+  background: var(--ice);
+  color: var(--deep);
+}
+.admin-btn.danger {
+  background: #fff;
+  color: #b3261e;
+  border-color: #f0c9c6;
+}
+.admin-error {
+  color: #b3261e;
+  font-size: 0.9rem;
+  background: #fdecea;
+  border: 1px solid #f5c6c2;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+.admin-bar {
+  background: var(--deep);
+  color: #fff;
+  padding: 14px 0;
+}
+.admin-bar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.admin-bar h1 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+.admin-bar a {
+  color: #c3cce6;
+}
+.admin-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px 80px;
+}
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.admin-form .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.admin-form h2,
+.admin-list h2,
+.admin-preview h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+.admin-check {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.admin-preview {
+  position: sticky;
+  top: 20px;
+}
+.admin-list {
+  margin-top: 34px;
+}
+.promo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 10px;
+}
+.promo-row .meta {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.promo-row .tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 8px;
+}
+.tag.live {
+  background: #e5f6ec;
+  color: #1a7f43;
+}
+.tag.draft {
+  background: #eef1f6;
+  color: var(--ink-soft);
+}
+.promo-row form {
+  display: inline;
+}
+.empty {
+  color: var(--ink-soft);
+  padding: 18px 0;
+}
