@@ -73,7 +73,12 @@ export function Footer() {
           </ul>
         </div>
         <div className="footer-bottom">
-          <div>© <span>{year}</span> CoolMaster Services Limited · GST registered</div>
+          <div>
+            © <span>{year}</span> CoolMaster Services Limited · GST registered ·{" "}
+            <Link href="/admin" className="footer-staff">
+              Employee login
+            </Link>
+          </div>
           <div className="socials">
             <a href="#" aria-label="Facebook">
               <svg viewBox="0 0 24 24" fill="currentColor">

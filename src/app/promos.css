@@ -110,6 +110,17 @@
   font-weight: 600;
 }
 
+/* Discreet staff login in the footer */
+.footer-staff {
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+.footer-staff:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
 @media (max-width: 640px) {
   .promo-card {
     flex-direction: column;
