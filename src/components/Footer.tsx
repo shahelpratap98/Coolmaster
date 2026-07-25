@@ -62,7 +62,6 @@ export function Footer() {
           </div>
         </div>
         <div className="footer-brands">
-          <h5>Heat pump &amp; air conditioning brands we install &amp; maintain</h5>
           <ul className="brand-list">
             {BRANDS.map((b) => (
               <li key={b.alt}>
