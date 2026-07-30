@@ -57,7 +57,7 @@ export function Footer() {
             <ul>
               <li>{OWNER}</li>
               <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
-              <li>[Your service area], NZ</li>
+              <li>Auckland, New Zealand</li>
               <li>Mon–Fri 7:30am–5pm</li>
             </ul>
           </div>

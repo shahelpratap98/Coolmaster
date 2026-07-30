@@ -6,7 +6,7 @@ export const WA_URL =
 
 export const PHONE_DISPLAY = "0800 000 000";
 export const PHONE_TEL = "+64800000000";
-export const EMAIL = "info@coolmaster.co.nz";
+export const EMAIL = "shivcoolmaster@gmail.com";
 export const OWNER = "Shiv Sivan";
 
 export type ServiceMenuItem = { slug: string; label: string };
