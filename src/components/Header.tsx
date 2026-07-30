@@ -84,6 +84,9 @@ export function Header() {
                 ))}
               </div>
             </div>
+            <Link href="/projects" className={cls("/projects")} aria-current={cur("/projects")}>
+              Our Projects
+            </Link>
             <Link href="/faq" className={cls("/faq")} aria-current={cur("/faq")}>
               FAQ
             </Link>
@@ -125,6 +128,9 @@ export function Header() {
             {s.label}
           </Link>
         ))}
+        <Link href="/projects" className={cls("/projects")}>
+          Our Projects
+        </Link>
         <Link href="/faq" className={cls("/faq")}>
           FAQ
         </Link>

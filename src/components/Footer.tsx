@@ -47,6 +47,7 @@ export function Footer() {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About us</Link></li>
               <li><Link href="/services#audiences">Residential &amp; commercial</Link></li>
+              <li><Link href="/projects">Our projects</Link></li>
               <li><Link href="/faq">FAQ</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
