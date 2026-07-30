@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { EMAIL, OWNER, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
+import { EMAIL, OWNER } from "@/lib/site";
 
 const BRANDS = [
   { src: "/brand-daikin.png", alt: "Daikin" },
   { src: "/brand-mitsubishi-electric.png", alt: "Mitsubishi Electric" },
   { src: "/brand-fujitsu.png", alt: "Fujitsu" },
   { src: "/brand-lg.png", alt: "LG" },
-  { src: "/brand-samsung.png", alt: "Samsung" },
+  { src: "/brand-gree.png", alt: "Gree" },
+  { src: "/brand-panasonic.png", alt: "Panasonic" },
 ];
 
 export function Footer() {
@@ -54,7 +55,6 @@ export function Footer() {
             <h5>Contact</h5>
             <ul>
               <li>{OWNER}</li>
-              <li><a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a></li>
               <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
               <li>[Your service area], NZ</li>
               <li>Mon–Fri 7:30am–5pm</li>

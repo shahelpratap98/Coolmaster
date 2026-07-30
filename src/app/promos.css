@@ -110,6 +110,21 @@
   font-weight: 600;
 }
 
+/* Under-construction page actions */
+.uc-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.uc-link {
+  color: var(--frost);
+  font-weight: 600;
+}
+.uc-link:hover {
+  text-decoration: underline;
+}
+
 /* Discreet staff login in the footer */
 .footer-staff {
   color: inherit;
