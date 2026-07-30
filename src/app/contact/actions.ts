@@ -2,6 +2,8 @@
 
 import { randomUUID } from "crypto";
 import { z } from "zod";
+import { rateLimit } from "@/lib/ratelimit";
+import { getClientIp } from "@/lib/request";
 
 const EnquirySchema = z
   .object({
@@ -22,6 +24,15 @@ export type EnquiryState = { ok: boolean; error?: string };
 const TO = "shivcoolmaster@gmail.com";
 
 export async function sendEnquiryAction(input: unknown): Promise<EnquiryState> {
+  const ip = await getClientIp();
+  const rl = await rateLimit("contact", ip);
+  if (!rl.ok) {
+    return {
+      ok: false,
+      error: "You've sent a few enquiries already — please wait a little while before sending another.",
+    };
+  }
+
   const parsed = EnquirySchema.safeParse(input);
   if (!parsed.success) {
     return { ok: false, error: parsed.error.issues[0]?.message ?? "Please check the form and try again." };

@@ -2,7 +2,6 @@
 
 import { randomUUID } from "crypto";
 import { z } from "zod";
-import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
@@ -14,6 +13,7 @@ import {
   setPromoActive,
 } from "@/lib/promos";
 import { rateLimit } from "@/lib/ratelimit";
+import { getClientIp } from "@/lib/request";
 import { detectImage, MAX_IMAGE_BYTES } from "@/lib/image-detect";
 
 export type FormState = { error?: string; ok?: boolean } | undefined;
@@ -28,20 +28,14 @@ const LoginSchema = z.object({
   password: z.string().min(1).max(200),
 });
 
-async function clientIp() {
-  const h = await headers();
-  const fwd = h.get("x-forwarded-for");
-  return fwd?.split(",")[0]?.trim() || h.get("x-real-ip") || "local";
-}
-
 // ---------------- auth ----------------
 
 export async function loginAction(
   _prev: FormState,
   formData: FormData
 ): Promise<FormState> {
-  const ip = await clientIp();
-  const rl = rateLimit(`login:${ip}`, 5, 15 * 60 * 1000);
+  const ip = await getClientIp();
+  const rl = await rateLimit("login", ip);
   if (!rl.ok) {
     return { error: "Too many attempts. Please wait a few minutes and try again." };
   }
