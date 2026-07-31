@@ -5,7 +5,7 @@ const BASE = "https://www.coolmaster.co.nz";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticPaths = ["", "/about", "/services", "/faq", "/contact", "/specials"];
+  const staticPaths = ["", "/about", "/services", "/projects", "/faq", "/contact", "/specials"];
   return [
     ...staticPaths.map((p) => ({
       url: `${BASE}${p}`,
