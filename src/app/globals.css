@@ -122,17 +122,13 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.08;col
 .hero-trust{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.9rem;color:rgba(255,255,255,.85)}
 .hero-trust span{display:inline-flex;align-items:center;gap:8px;font-weight:500}
 .hero-trust svg{width:17px;height:17px;color:#7FD0F5;flex:none}
-/* CoolMaster sun/snowflake emblem, floated on the right of the hero */
-.hero-emblem{position:absolute;z-index:1;top:50%;right:clamp(-10px,4vw,72px);transform:translateY(-50%);
-  width:clamp(230px,26vw,360px);height:auto;
-  filter:drop-shadow(0 18px 46px rgba(0,0,0,.4));
-  pointer-events:none;user-select:none}
-@media (max-width:1080px){.hero-emblem{width:clamp(180px,22vw,260px);right:clamp(-30px,1vw,24px)}}
+/* CoolMaster sun/snowflake emblem, inline after the headline at text size */
+.hero-mark{display:inline-block;height:.92em;width:auto;vertical-align:-.12em;margin-left:.14em;
+  filter:drop-shadow(0 4px 12px rgba(0,0,0,.35))}
 @media (max-width:860px){
   .hero{background-position:72% center}
   .hero::before{background:linear-gradient(180deg,rgba(13,21,48,.86) 0%,rgba(13,21,48,.66) 100%)}
   .hero-inner{padding:70px 0 78px}
-  .hero-emblem{display:none}
 }
 
 /* ============================ TRUST STRIP ============================ */
