@@ -12,7 +12,7 @@ const PROJECTS = [
   {
     src: "/project-1.jpg",
     caption:
-      "Twin Mitsubishi Electric heat pumps installed on a commercial rooftop, Auckland.",
+      "Gree inverter heat pump installed on a commercial rooftop — system evacuated and commissioned, Auckland.",
   },
   {
     src: "/project-2.jpg",
