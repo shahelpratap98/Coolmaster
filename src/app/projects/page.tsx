@@ -21,7 +21,7 @@ const PROJECTS = [
   {
     src: "/project-3.jpg",
     caption:
-      "Mitsubishi Electric outdoor unit, neatly bracket-mounted and commissioned.",
+      "Bank of outdoor condensers on wall brackets — a multi-unit commercial installation, Auckland.",
   },
   {
     src: "/project-4.jpg",
