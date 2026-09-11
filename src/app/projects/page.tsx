@@ -25,7 +25,8 @@ const PROJECTS = [
   },
   {
     src: "/project-4.jpg",
-    caption: "Wall-mounted Fujitsu Airstage in a new-build living space.",
+    caption:
+      "Gree condenser mounted on a heavy-duty wall bracket in a commercial plant room.",
   },
   {
     src: "/project-5.jpg",
