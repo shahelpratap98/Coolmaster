@@ -7,7 +7,7 @@ const rotated = await sharp(SRC).rotate().toBuffer({ resolveWithObject: true });
 const W = rotated.info.width, H = rotated.info.height;
 
 // Frame the bracket-mounted unit + spiral duct; keep the ladder out on the right.
-const frac = { left: 0.03, top: 0.16, width: 0.7, height: 0.52 };
+const frac = { left: 0.0, top: 0.09, width: 0.74, height: 0.6 };
 const region = {
   left: Math.round(frac.left * W),
   top: Math.round(frac.top * H),
